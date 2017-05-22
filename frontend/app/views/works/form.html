@@ -1,0 +1,58 @@
+<ng-include src="'app/views/_header.html'"></ng-include>
+
+<form name="vm.form" class="jumbotron work">
+  <div class="form-group" ng-class="{ 'has-error': vm.form.title.$invalid }">
+    <input type="text" class="form-control" name="title" ng-model="vm.work.title" placeholder="title">
+  </div>
+  <div class="form-group">
+    <textarea rows="10" class="form-control" name="description" ng-model="vm.work.description" placeholder="description"></textarea>
+  </div>
+  <div class="form-group">
+    <ui-select multiple tagging tagging-label="false" ng-model="vm.work.tags">
+      <ui-select-match placeholder="tags">{{$item}}</ui-select-match>
+      <ui-select-choices repeat="tag in vm.tags | filter: $select.search | limitTo: 5">{{::tag}}</ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="container files">
+    <ul class="list-group left col-md-6">
+      <li class="list-group-item upload-button">
+        <div class="row">
+          <label for="upload" class="col-md-12">Select files</label>
+          <input type="file" id="upload" nv-file-select multiple uploader="vm.uploader">
+        </div>
+      </li>
+      <li class="list-group-item" ng-repeat="item in vm.uploader.queue">
+        <div class="row">
+          <div class="col-md-8 word-wrap">{{::item.file.name}}</div>
+          <div class="col-md-3">
+            <progress-bar value="{{item.progress}}%" ng-if="vm.uploader.isUploading"></progress-bar>
+            <span ng-if="!vm.uploader.isUploading">{{:: item.file.size/1024/1024 | number: 2 }} MB</span>
+          </div>
+          <div class="col-md-1 text-right">
+            <span class="glyphicon glyphicon-remove cursor-pointer" ng-click="item.remove()"></span>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item disabled text-center" ng-if="vm.empty(vm.uploader.queue)">No files to upload</li>
+    </ul>
+    <ul class="list-group right col-md-6">
+      <li class="list-group-item active">Files uploaded</li>
+      <li class="list-group-item" ng-class="{ 'disabled': file._remove }" ng-repeat="file in vm.work.files track by $index">
+        <div class="row">
+          <div class="col-md-8 word-wrap">{{::file.original}}</div>
+          <div class="col-md-3">{{:: file.size/1024/1024 | number: 2 }} MB</div>
+          <div class="col-md-1 text-right">
+            <span class="glyphicon cursor-pointer" ng-class="file._remove ? 'glyphicon-ok' : 'glyphicon-remove'"
+              ng-click="file._remove = !file._remove">
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item disabled text-center" ng-if="vm.empty(vm.work.files)">No files uploaded</li>
+    </ul>
+  </div>
+  <div class="form-buttons">
+    <button class="btn btn-default" ui-sref="works-show({id: vm.work._id})">Cancel</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+   </div>
+</form>

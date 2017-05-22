@@ -1,0 +1,20 @@
+<ng-include src="'app/views/_header.html'"></ng-include>
+
+<form class="form-search" ng-submit="vm.search()">
+  <div class="form-group">
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="vm.searchParams.text" placeholder="search">
+      <div class="input-group-addon" ng-click="vm.search()">
+        <span class="glyphicon glyphicon-search"></span>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="works-list animate" ng-if="!vm.header">
+  <div class="jumbotron" ng-repeat="work in vm.works track by work._id">
+    <h2>{{::work.title}}</h2>
+    <p class="description">{{::work.description}}</p>
+    <a ui-sref="works-show({id: work._id})">View more</a>
+  </div>
+</div>

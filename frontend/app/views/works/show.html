@@ -1,0 +1,34 @@
+<ng-include src="'app/views/_header.html'"></ng-include>
+
+<div class="jumbotron">
+  <a ui-sref="works" class="close">&times;</a>
+  <h1>{{::vm.work.title}}</h1>
+  <div class="row">
+    <div class="col-md-12 info">
+      {{:: vm.work.updated_at | date: "dd/MM/yyyy HH:mm" }} | {{:: vm.work.downloads }} downloads
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <p class="subtitle">Description</p>
+      <p>{{::vm.work.description}}</p>
+    </div>
+    <div class="col-md-3 tags">
+      <p class="subtitle">Tags</p>
+      <p>
+        <span class="label label-info" ng-repeat="tag in vm.work.tags track by $index">{{::tag}}</span>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <p class="col-md-12 subtitle">Files</p>
+    <div class="col-xs-4 col-md-2" ng-repeat="file in vm.work.files track by $index">
+      <div class="thumbnail cursor-pointer" ng-click="vm.download(file.filename)">
+        <img ng-src="{{vm.thumbnail(file)}}">
+        <div class="caption">{{::file.original}}</div>
+      </div>
+    </div>
+  </div>
+  
+  <a ui-sref="works-form({id: vm.work._id})">Edit</a>
+</div>

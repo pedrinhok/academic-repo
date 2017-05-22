@@ -1,0 +1,31 @@
+.page-header.animate.ng-enter,
+.page-header.animate.ng-leave {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.page-header.animate.ng-enter,
+.page-header.animate.ng-leave.ng-leave-active {
+  max-height: 0;
+}
+
+.page-header.animate.ng-leave,
+.page-header.animate.ng-enter.ng-enter-active {
+  max-height: 30vh;
+}
+
+.works-list.animate.ng-enter,
+.works-list.animate.ng-leave {
+  -webkit-transition: all 0.2s linear 0.2s;
+  transition: all 0.2s linear 0.2s;
+}
+
+.works-list.animate.ng-enter,
+.works-list.animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.works-list.animate.ng-leave,
+.works-list.animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}

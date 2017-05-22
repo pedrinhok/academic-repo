@@ -1,0 +1,18 @@
+body { font-size: 13px; }
+
+.cursor-pointer { cursor: pointer; }
+
+.form-control { padding: 20px; }
+.form-buttons { text-align: right; }
+
+.header { margin-top: 5vh; }
+
+.ui-select-container { padding: 10px 20px 10px 20px !important; }
+.ui-select-match span:last-child { font-size: 13px !important; }
+
+.word-wrap { word-wrap: break-word; }
+
+::-webkit-input-placeholder { text-transform: capitalize; }
+::-moz-placeholder { text-transform: capitalize; }
+:-ms-input-placeholder { text-transform: capitalize; }
+input:-moz-placeholder { text-transform: capitalize; }
