@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+**/.DS_Store
+
+# backend
+backend/node_modules
+backend/uploads
+
+# frontend
+frontend/node_modules
