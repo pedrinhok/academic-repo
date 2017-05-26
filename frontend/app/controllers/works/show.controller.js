@@ -7,7 +7,6 @@
 
   function controller($state, Work){
     const vm = this
-    vm.header = true
 
     vm.download = function(filename){
       window.open(`http://localhost:8080/api/works/${vm.work._id}/download/${filename}`)

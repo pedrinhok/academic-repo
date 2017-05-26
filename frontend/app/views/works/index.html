@@ -11,10 +11,8 @@
   </div>
 </form>
 
-<div class="works-list animate" ng-if="!vm.header">
-  <div class="jumbotron" ng-repeat="work in vm.works track by work._id">
-    <h2>{{::work.title}}</h2>
-    <p class="description">{{::work.description}}</p>
-    <a ui-sref="works-show({id: work._id})">View more</a>
-  </div>
+<div class="jumbotron animate" ng-repeat="work in vm.works track by work._id">
+  <h2>{{::work.title}}</h2>
+  <p class="description">{{::work.description}}</p>
+  <a ui-sref="works-show({id: work._id})">View more</a>
 </div>
