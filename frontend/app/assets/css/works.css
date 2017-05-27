@@ -6,6 +6,7 @@
 .form-search {}
 .form-search input { padding: 30px; font-size: 20px; }
 .form-search .input-group-addon { padding: 0 30px 0 30px; background-color: #5CB85C; border: 1px solid #5CB85C; color: #FFF; cursor: pointer; }
+.form-search .input-group-addon:hover { background-color: #449D44; border-color: #398439; }
 
 .list-group.left { padding-left: 0; padding-right: 10px; }
 .list-group.right { padding-left: 10px; padding-right: 0; }
