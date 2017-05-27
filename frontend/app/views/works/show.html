@@ -12,11 +12,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <p class="subtitle">Description</p>
       <p>{{::vm.work.description}}</p>
     </div>
-    <div class="col-md-3 tags">
+  </div>
+  <div class="row">
+    <div class="col-md-12 tags">
       <p class="subtitle">Tags</p>
       <p>
         <span class="label label-info" ng-repeat="tag in vm.work.tags track by $index">{{::tag}}</span>
