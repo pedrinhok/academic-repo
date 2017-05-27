@@ -1,6 +1,9 @@
 <ng-include src="'app/views/_header.html'"></ng-include>
 
 <form name="vm.form" class="jumbotron work">
+  <div class="top-buttons">
+    <span ui-sref="works-show({id: vm.work._id})" class="fa fa-close"></span>
+  </div>
   <div class="form-group" ng-class="{ 'has-error': vm.form.title.$invalid }">
     <input type="text" class="form-control" name="title" ng-model="vm.work.title" placeholder="title">
   </div>

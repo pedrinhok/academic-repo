@@ -1,7 +1,10 @@
 <ng-include src="'app/views/_header.html'"></ng-include>
 
 <div class="jumbotron">
-  <a ui-sref="works" class="close">&times;</a>
+  <div class="top-buttons">
+    <span ui-sref="works-form({id: vm.work._id})" class="fa fa-pencil"></span>
+    <span ui-sref="works" class="fa fa-close"></span>
+  </div>
   <h1>{{::vm.work.title}}</h1>
   <div class="row">
     <div class="col-md-12 info">
@@ -29,6 +32,4 @@
       </div>
     </div>
   </div>
-  
-  <a ui-sref="works-form({id: vm.work._id})">Edit</a>
 </div>
