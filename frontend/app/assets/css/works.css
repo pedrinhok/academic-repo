@@ -33,4 +33,4 @@
 .thumbnail .caption { background-color: #5CB85C; opacity: 0.8; color: #FFF; font-size: 12px; word-wrap: break-word; -webkit-border-radius: 0px 0px 4px 4px; -moz-border-radius: 0px 0px 4px 4px; border-radius: 0px 0px 4px 4px; }
 .thumbnail:hover .caption { opacity: 1; }
 
-.works-list .description { background: -webkit-linear-gradient(#333, #EEE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.works .description { background: -webkit-linear-gradient(#333, #EEE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }

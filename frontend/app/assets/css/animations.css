@@ -14,18 +14,18 @@
   max-height: 30vh;
 }
 
-.jumbotron.animate.ng-enter,
-.jumbotron.animate.ng-leave {
-  -webkit-transition: all 0.2s linear 0.2s;
-  transition: all 0.2s linear 0.2s;
+.works .animate.ng-enter,
+.works .animate.ng-leave {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-.jumbotron.animate.ng-enter,
-.jumbotron.animate.ng-leave.ng-leave-active {
+.works .animate.ng-enter,
+.works .animate.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-.jumbotron.animate.ng-leave,
-.jumbotron.animate.ng-enter.ng-enter-active {
+.works .animate.ng-leave,
+.works .animate.ng-enter.ng-enter-active {
   opacity: 1;
 }
